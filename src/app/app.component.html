@@ -1,18 +1,31 @@
-<div class="container">
-  <h2>Calculadora de IMC</h2>
+<div class="container-fluid d-flex justify-content-center align-items-center vh-100" style="background: linear-gradient(135deg, #6b8785, #7d9997);">
+  <div class="card shadow-lg p-4 text-center" style="max-width: 400px; background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); color: #ffffff; border-radius: 20px;">
+    
+    <div class="card-body">
+      <h2 class="card-title fw-bold mb-4">Calculadora de IMC</h2>
 
-  <label>Peso (kg):</label>
-  <input type="number" [(ngModel)]="peso">
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-light text-dark"><i class="bi bi-person-fill"></i></span>
+        <input type="number" id="peso" class="form-control form-control-lg" [(ngModel)]="peso" placeholder="Peso (kg)">
+      </div>
 
-  <label>Altura (m):</label>
-  <input type="number" [(ngModel)]="altura">
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-light text-dark"><i class="bi bi-rulers"></i></span>
+        <input type="number" id="altura" class="form-control form-control-lg" [(ngModel)]="altura" placeholder="Altura (m)">
+      </div>
 
-  <button (click)="calcularIMC()">Calcular IMC</button>
+      <button class="btn btn-outline-light w-100 fw-bold" (click)="calcularIMC()">Calcular IMC</button>
 
-  <div *ngIf="imc !== null">
-    <h3>Seu IMC: {{ imc }}</h3>
-    <p>{{ mensagem }}</p>
+      <div *ngIf="imc !== null" class="alert alert-light mt-4" role="alert">
+        <h3 class="mb-1">Seu IMC: {{ imc }}</h3>
+        <p class="mb-0">{{ mensagem }}</p>
+      </div>
+
+      <div *ngIf="mensagem && imc === null" class="alert alert-danger mt-3" role="alert">
+        {{ mensagem }}
+      </div>
+    </div>
+
   </div>
-
-  <p *ngIf="mensagem && imc === null" style="color: red;">{{ mensagem }}</p>
 </div>
+

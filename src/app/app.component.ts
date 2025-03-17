@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'], // Corrigido "styleUrls"
+  styleUrls: ['./app.component.css'], 
   standalone: false,
 })
 export class AppComponent {
@@ -11,7 +12,7 @@ export class AppComponent {
 
   peso: number = 0;
   altura: number = 0;
-  imc: number | null = null; // Pode ser nulo antes do cálculo
+  imc: number | null = null; 
   mensagem: string = '';
 
   calcularIMC() {
