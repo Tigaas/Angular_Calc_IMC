@@ -3,16 +3,18 @@
     
     <div class="card-body">
       <h2 class="card-title fw-bold mb-4">Calculadora de IMC</h2>
-
+      <p class="text-light">Insira seu peso(kg):</p>
       <div class="input-group mb-3">
         <span class="input-group-text bg-light text-dark"><i class="bi bi-person-fill"></i></span>
         <input type="number" id="peso" class="form-control form-control-lg" [(ngModel)]="peso" placeholder="Peso (kg)">
       </div>
-
+      
+      <p class="text-light">Insira sua altura(m):</p>
       <div class="input-group mb-3">
         <span class="input-group-text bg-light text-dark"><i class="bi bi-rulers"></i></span>
         <input type="number" id="altura" class="form-control form-control-lg" [(ngModel)]="altura" placeholder="Altura (m)">
       </div>
+      
 
       <button class="btn btn-outline-light w-100 fw-bold" (click)="calcularIMC()">Calcular IMC</button>
 
@@ -28,4 +30,3 @@
 
   </div>
 </div>
-
